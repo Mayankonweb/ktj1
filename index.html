@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Chakki Restaurent</title>
+        <meta name="viewport" content="width=device-width, initial-scale=0.8">
+        <meta http-equiv="refresh" content="100">
+        <style>
+            html{
+                scroll-behavior: smooth;
+                scrollbar-color: cyan;
+
+            }
+            body{
+                margin: 0ch;
+                background-color:wheat;
+                font-family: sans-serif;
+            }
+            p{
+                margin: 0%;
+                padding: 0%;
+            }
+            .navig{
+                height:auto;
+                width: 100%;
+                background-color:tomato;
+                position: fixed;
+                top: 0;
+                overflow: hidden;
+            }
+            .topbar{
+
+            }
+            .frame{
+                width:80%;
+                min-width: 800px;
+                margin: 0 auto;
+            }
+            #logot{
+                height:40px;
+                margin-top: 5px;
+                border: tomato inset 6px;
+                border-radius: 12px;
+            }
+            .nav{
+                font-size: 20px;
+                height: 40px;
+                color: violet;
+                font-weight: lighter;
+                float:right ;
+                margin: 8px 0.5% 4px .5%;
+                padding: 0 0.5% 0 0.5%;
+                border-width: thick;
+                border-style: none none solid none;
+                border-color:blue;
+                border-radius: 5px;
+            } 
+            a:link{
+                color: white;
+                text-decoration: none;
+                border-color: white;
+                padding: 0 2% 0 2%;  
+                padding:0 0 20px 0;
+            }
+            a:visited{
+                color: white;
+                padding: 0 2% 0 2%;  
+                padding:0 0 20px 0;
+            }
+            a:hover{
+                color:wheat;
+                padding:20px 0 20px 0;
+                border-style:solid;
+                border-radius: 10px;   
+                border-width: 0 0 10px 0; 
+                border-color: aqua;   
+            }
+            a:active{
+                color:thistle;
+            }
+            .print{
+                float:  right;
+                width:65%;
+            }
+            .Intro{ margin:80 px;
+                display: flex;
+                flex-wrap: nowrap;
+            }
+            .intname{
+                margin-top: 20px;
+                padding: 2%;
+                background-image: url("images/cover.jpg");   
+                height: max;
+                width:46%;
+                font-weight: 800;
+                text-align: center;
+                font-size: 120%;
+                color:rgb(152, 253, 0);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;     
+                font-family:papyrus,"Curlz MT",sans;
+                border: ridge brown 8px;
+                
+            }
+            a.check:hover{
+                color: yellow;
+                border: none;
+            }
+            a.check:active{
+                color: aqua;
+                border: none;
+            }
+            .photo{
+                width: 46%;
+                border: ridge brown 8px;
+                margin-top: 20px;
+            }
+            .section{
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                color:brown ;
+                font-size: 20px;
+                font-weight: normal;
+            }
+            .sect2{
+                padding-bottom:0 ;
+            }
+            .box{
+                background-color:burlywood ;
+                height: 200px;
+                width: 400px;
+                margin: 10px;
+                font-weight: lighter;
+                border: ridge wheat 4px;
+                border-radius: 25px; float:left;
+            }
+            .dishname{
+                margin:0;
+                padding: 0px 0 2px 4px;
+                color:rgb(233, 17, 17);
+                font-family: cursive;
+                font-size: 35px;
+            }
+            .dish{
+                float: left;
+            }
+            .dishphoto{
+                width:250px;
+                float:left;
+                max-height: 135px;
+                padding: 0 5px 0px 4px;
+                border: yellow inset 3px;
+                border-radius: 15px;
+            }
+            .button{
+                border-radius: 8px;
+                float: left;
+                margin: 10px 15px 10px 10px;
+            }
+            .pri{
+                color: brown;
+                font-size: 18px;
+                text-decoration: line-through;
+                float:right  ;
+                margin-right: 5px;
+                
+            }
+            .pri2{
+                color: darkgreen;
+                font-style: italic;
+                font-size: 18px;
+                float: right ; 
+                margin-right: 10px;
+            }
+            .price{
+                margin:0;
+                padding:0 0 0 3px;
+                float: left;
+                width:33%;
+            }
+            .leftcard{
+                float: left;
+            }
+            .symbol{
+                margin: 10px ;
+                float: right;
+            }
+            .discounts{
+                font-weight: lighter;
+                font-size: 18px;
+                font-style: italic;
+            }
+            .dishtype{     font-size: 25px;
+
+            }
+            .list{
+                margin: 20px 1% 20px 1%;
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .rev{
+                margin: 0.75%;
+                border:double chocolate 10px ;
+                display: flex;
+                flex-wrap: nowrap;
+                width: 45%;
+                font-weight: normal;
+                font-size:20px;
+                min-width: 400px ;
+            }
+            .revd{
+                padding:5px;
+            }
+            .custi{
+                margin: 10px;
+                border:khaki groove 5px ;
+                border-radius: 20px;
+                max-height: 200px;
+                width: 40%;
+            }
+            .form{
+                background-color: khaki;
+            }
+            .about{
+                width: 100%;
+                background-color: darkred;
+            }
+            .dlogs{
+                height: 30px;
+            }
+            .abouts{
+                display: flex;
+                flex-wrap: nowrap;
+            }
+            .info{
+                width: 35%;
+                color: darkgray;
+                font-weight: normal;
+
+            }
+            a.info:hover{
+                border: black;
+                size: 120%;
+            }
+            ul.info{
+                list-style-type: none;
+            }
+            input[type=text]{
+                width:100%;
+                height: 35px;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+            input[type=submit] {
+                width: 100%;
+                font-size: 25px;
+                font-weight: bold;
+                background-color: #f70909;
+                color: white;
+                height: 35px;
+                padding: 5px 20px;
+                margin: 8px 0;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+
+            input[type=submit]:hover {
+                background-color: #f70864;}
+        </style>
+
+    </head>
+    <body>
+        <div class="topbar">
+            <div class="navig">
+                <div class="frame">
+                        <img src="images/chakki.png" id="logot">
+                        <p class="print">
+                        <span class="nav">
+                            <a href="#us">About Us</a>
+                        </span>
+                        <span class="nav">
+                            <a href="#review">Reviews</a>
+                        </span>
+
+                        <span class="nav">
+                            <a href="#recom">Recommendations</a>
+                        </span>
+
+                        <span class="nav">
+                            <a href="#special">Specialities</a>
+                        </span>
+
+                        <span class="nav">
+                            <a href="#intro">Intro</a>
+                        </span>
+                        </p>
+                </div>
+            </div>
+            <div class="section frame" >
+                <a name="intro"></a>
+                <hr>
+                <br>
+                <h1 sect2>Introduction</h1>
+                <p>We serve the classic Indian taste recipes</p>
+            </div>
+            <div class="frame Intro">
+                   <div class="intname" >
+                        <h1>The CHAKKI<br>Dining</h1>
+                        <br>
+                        <h3><a href="#special" class="check">Check our Specialities</a>
+                        </h3>
+                     </div>
+                   <img src="images/photo.png" alt="" class="photo">
+            </div>
+                    <a name="special"></a>
+            <br>
+            <hr color="white" width="80%">
+
+            <div class="frame">
+                <div class="section" >
+                <h1 sect2>Specialities</h1>
+                <p>Here are our best serving dishesh</p>
+                </div >
+                <div class="box">
+                    <div class="leftcard">
+                        <input type="button" value="Add+" class="button">
+                        <h1 class="dishname" >Paratha</h1>
+                        <div class="dish">
+                           <img src="images/paratha.jpg" class="dishphoto" >
+                        </div>
+                    </div>
+                    <div class=price>
+                        <div >
+                            <img src="images/veg.png" alt="veg" width="25" class="symbol">
+                            <b class="dishtype">
+                                Aloo fill
+                            </p><br>
+                            </r>
+                            <pp>
+                            <p class="discounts"> 
+                                Season discounts
+                            <br>
+                            <br><br>
+                            <p><span class="pri2"> &#8377 95</span> 
+                                <span class="pri">&#8377 150</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+                
+                <div class="box">
+                    <div class="leftcard">
+                        <input type="button" value="Add+" class="button">
+                        <h1 class="dishname" >Lassi</h1>
+                        <div class="dish">
+                           <img src="images/lassi.jpg" class="dishphoto" >
+                        </div>
+                    </div>
+                    <div class=price>
+                        <div >
+                            <img src="images/veg.png" alt="veg" width="25" class="symbol">
+                            <b class="dishtype">
+                                Punjabi
+                            </p><br>
+                            </r>
+                            <pp>
+                            <p class="discounts"> 
+                                Normal discounts
+                            <br><br>
+                            <p><span class="pri2"> &#8377 72</span> 
+                                <span class="pri">&#8377 80</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+                
+                <div class="box">
+                    <div class="leftcard">
+                        <input type="button" value="Add+" class="button">
+                        <h1 class="dishname" >Dosa</h1>
+                        <div class="dish">
+                           <img src="images/dosa.jpg" class="dishphoto" >
+                        </div>
+                    </div>
+                    <div class=price>
+                        <div >
+                            <img src="images/veg.png" alt="veg" width="25" class="symbol">
+                            <b class="dishtype">
+                                South Indian
+                            </p><br>
+                            </r>
+                            <pp>
+                            <p class="discounts"> 
+                                Special discounts
+                            <br><br><br>
+                            <p><span class="pri2"> &#8377 52</span> 
+                                <span class="pri">&#8377 81</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+                
+                <div class="box">
+                    <div class="leftcard">
+                        <input type="button" value="Add+" class="button">
+                        <h1 class="dishname" >Nawabi</h1>
+                        <div class="dish">
+                           <img src="images/nawabi.jpg" class="dishphoto">
+                        </div>
+                    </div>
+                    <div class=price>
+                        <div >
+                            <img src="images/non.png" alt="veg" width="25" class="symbol">
+                            <b class="dishtype">
+                                Meal
+                            </p><br>
+                            </r>
+                            <pp>
+                            <p class="discounts"> 
+                                Special discounts
+                            <br>
+                            <br><br><br>
+                            <p><span class="pri2"> &#8377 321</span> 
+                                <span class="pri">&#8377 258</span>
+                            </p>
+                            <a name="recom"></a>
+                        </div>
+                    </div>
+                </div>
+
+
+                
+                
+            </div>
+            <br>
+            <br>
+            <hr color="wheat" width="80%">
+            <hr color="white" width="80%">
+
+
+            <div class="frame">
+                <div class="section" >
+                <h1 sect2>Recommendations</h1>
+                <p>Search your favourite dish among variety of Indian dishes</p>
+                </div >
+                <div style="display: flex; flex-wrap: nowrap;">
+                    <input type="text" placeholder="Search" >
+                    <button type="submit"  style=" height: 35px; padding: 5px 20px; margin: 8px 0;" >
+                    <img src="images/search.png" width="25px"></button>
+                </div>
+                <br>
+
+
+
+                
+                <div class="box">
+                    <div class="leftcard">
+                        <input type="button" value="Add+" class="button">
+                        <h1 class="dishname" >Dhokle</h1>
+                        <div class="dish">
+                           <img src="images/dhokla.jpg" class="dishphoto" alt="dhokla">
+                        </div>
+                    </div>
+                    <div class=price>
+                        <div >
+                            <img src="images/veg.png" alt="veg" width="25" class="symbol">
+                            <b class="dishtype">
+                                Gujrati
+                            </p><br>
+                            </r>
+                            <pp>
+                            <p class="discounts"> 
+                                Normal discounts
+                            <br>
+                            <br><br><br>
+                            <p><span class="pri2"> &#8377 50</span> 
+                                <span class="pri">&#8377 45</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+
+                
+                <div class="box">
+                    <div class="leftcard">
+                        <input type="button" value="Add+" class="button">
+                        <h1 class="dishname" >Kachori</h1>
+                        <div class="dish">
+                           <img src="images/kachori.jpg" class="dishphoto" alt="dhokla">
+                        </div>
+                    </div>
+                    <div class=price>
+                        <div >
+                            <img src="images/veg.png" alt="veg" width="25" class="symbol">
+                            <b class="dishtype">
+                                Kota
+                            </p><br>
+                            </r>
+                            <pp>
+                            <p class="discounts"> 
+                                Special discounts
+                            <br>
+                            <br><br><br>
+                            <p><span class="pri2"> &#8377 52</span> 
+                                <span class="pri">&#8377 81</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+
+                
+                <div class="box">
+                    <div class="leftcard">
+                        <input type="button" value="Add+" class="button">
+                        <h1 class="dishname" style="font-size: 30px;" >Litti Chokha</h1>
+                        <div class="dish">
+                           <img src="images/litti.gif" class="dishphoto" alt="dhokla">
+                        </div>
+                    </div>
+                    <div class=price>
+                        <div >
+                            <img src="images/veg.png" alt="veg" width="25" class="symbol">
+                            <b class="dishtype">
+                                North Indian
+                            </p><br>
+                            </r>
+                            <pp>
+                            <p class="discounts"> 
+                                Special discounts
+                            <br>
+                            <br><br>
+                            <p><span class="pri2"> &#8377 52</span> 
+                                <span class="pri">&#8377 81</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+
+                
+                <div class="box">
+                    <div class="leftcard">
+                        <input type="button" value="Add+" class="button">
+                        <h1 class="dishname" style="font-size: 30px;">Veg Thali</h1>
+                        <div class="dish">
+                           <img src="images/thali.jpg" class="dishphoto" alt="dhokla">
+                        </div>
+                    </div>
+                    <div class=price>
+                        <div >
+                            <img src="images/veg.png" alt="veg" width="25" class="symbol">
+                            <b class="dishtype">
+                                North Indian
+                            </p><br>
+                            </r>
+                            <pp>
+                            <p class="discounts"> 
+                                Special discounts
+                            <br>
+                            <br><br>
+                            <p><span class="pri2"> &#8377 52</span> 
+                                <span class="pri">&#8377 81</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+
+                
+                <div class="box">
+                    <div class="leftcard">
+                        <input type="button" value="Add+" class="button">
+                        <h1 class="dishname" style="font-size: 25px;">Chhole Bhature</h1>
+                        <div class="dish">
+                           <img src="images/bat.jpg" class="dishphoto" alt="dhokla">
+                        </div>
+                    </div>
+                    <div class=price>
+                        <div >
+                            <img src="images/veg.png" alt="veg" width="25" class="symbol">
+                            <b class="dishtype">
+                                2 pcs
+                            </p><br>
+                            </r>
+                            <pp>
+                            <p class="discounts"> 
+                                Special discounts
+                            <br>
+                            <br><br><br>
+                            <p><span class="pri2"> &#8377 52</span> 
+                                <span class="pri">&#8377 81</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+
+                
+                <div class="box">
+                    <div class="leftcard">
+                        <input type="button" value="Add+" class="button">
+                        <h1 class="dishname" >Idli</h1>
+                        <div class="dish">
+                           <img src="images/idli.jpg" class="dishphoto" alt="dhokla">
+                        </div>
+                    </div>
+                    <div class=price>
+                        <div >
+                            <img src="images/veg.png" alt="veg" width="25" class="symbol">
+                            <b class="dishtype">
+                                South Indian
+                            </p><br>
+                            </r>
+                            <pp>
+                            <p class="discounts"> 
+                                Special discounts
+                            <br>
+                            <br><br>
+                            <p><span class="pri2"> &#8377 52</span> 
+                                <span class="pri">&#8377 81</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+
+                
+                <div class="box">
+                    <div class="leftcard">
+                        <input type="button" value="Add+" class="button">
+                        <h1 class="dishname" >Bengali</h1>
+                        <div class="dish">
+                           <img src="images/beng.jpg" class="dishphoto" alt="dhokla">
+                        </div>
+                    </div>
+                    <div class=price>
+                        <div >
+                            <img src="images/non.png" alt="veg" width="25" class="symbol">
+                            <b class="dishtype">
+                                Meal
+                            </p><br>
+                            </r>
+                            <pp>
+                            <p class="discounts"> 
+                                Special discounts
+                            <br>
+                            <br><br><br>
+                            <p><span class="pri2"> &#8377 52</span> 
+                                <span class="pri">&#8377 81</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+
+                
+                <div class="box">
+                    <div class="leftcard">
+                        <input type="button" value="Add+" class="button">
+                        <h1 class="dishname" style="font-size: 28px;">Gulab Jamun</h1>
+                        <div class="dish">
+                           <img src="images/gulab.jpg" class="dishphoto" alt="dhokla">
+                        </div>
+                    </div>
+                    <div class=price>
+                        <div >
+                            <img src="images/veg.png" alt="veg" width="25" class="symbol">
+                            <b class="dishtype">
+                                Gujrati
+                            </p><br>
+                            </r>
+                            <pp>
+                            <p class="discounts"> 
+                                Special discounts
+                            <br>
+                            <br><br><br>
+                            <p><span class="pri2"> &#8377 52</span> 
+                                <span class="pri">&#8377 81</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+
+                
+                <div class="box">
+                    <div class="leftcard">
+                        <input type="button" value="Add+" class="button">
+                        <h1 class="dishname" >Kheer</h1>
+                        <div class="dish">
+                           <img src="images/kheer.jpg" class="dishphoto" alt="dhokla">
+                        </div>
+                    </div>
+                    <div class=price>
+                        <div >
+                            <img src="images/veg.png" alt="veg" width="25" class="symbol">
+                            <b class="dishtype" style="font-size: 23px;" >
+                                Special
+                            </p><br>
+                            </r>
+                            <pp>
+                            <p class="discounts"> 
+                                Special discounts
+                            <br>
+                            <br><br><br>
+                            <p><span class="pri2"> &#8377 52</span> 
+                                <span class="pri">&#8377 81</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+
+                
+                <div class="box">
+                    <div class="leftcard">
+                        <input type="button" value="Add+" class="button">
+                        <h1 class="dishname" >Imarti</h1>
+                        <div class="dish">
+                           <img src="images/Imarti.png" class="dishphoto" alt="dhokla">
+                        </div>
+                    </div>
+                    <div class=price>
+                        <div >
+                            <img src="images/veg.png" alt="veg" width="25" class="symbol">
+                            <b class="dishtype" style="font-size: 23px;">
+                                Dessert
+                            </p><br>
+                            </r>
+                            <pp>
+                            <p class="discounts"> 
+                                Special discounts
+                            <br>
+                            <br><br><br>
+                            <p><span class="pri2"> &#8377 52</span> 
+                                <span class="pri">&#8377 81</span>
+                            </p>
+                            <a name="review"></a>
+                        </div>
+                    </div>
+                </div>
+                
+
+
+
+            </div>
+            <br>
+            <br>
+            <hr color="wheat" width="80%">
+            <hr color="white" width="80%">
+
+            <div class="frame">
+                <div class="section" >
+                    <h1 >Reviews</h1>
+                    <p>Find the reviews of our customers. </p>
+                </div >
+                <div class="list">
+                <div class="rev">
+                    
+                    <img src="images/soorma.jpg" class="custi">
+                     
+                    <div class="revd">
+                        <h3>Soorma Bhopali</h5>
+                        <p>  Ullamcorper a lacus vestibulum sed arcu non odio euismod lacinia.
+                        </p>
+
+                    </div>
+                </div>
+                <div class="rev">
+                    
+                    <img src="images/chatur.jpg" class="custi">
+                     
+                    <div class="revd">
+                        <h3>Chatur Ramlingam</h5>
+                        <p> Tincidunt vitae semper quis lectus nulla at volutpat diam.</p>
+
+                    </div>
+                </div>
+                <div class="rev">
+                    
+                    <img src="images/omkar.jpg" class="custi">
+                     
+                    <div class="revd">
+                        <h3>Gangadhar Vidyadhar Mayadhar Omkarnath Shastri</h5>
+                        <p>Shaktiman tellus at urna !!</p>
+
+                    </div>
+                </div>
+                <div class="rev">
+                    
+                    <img src="images/anthony.jpg" class="custi">
+                     
+                    <div class="revd">
+                        <h3>Anthony Gonsalvis</h5>
+                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+                    </div>
+                </div>
+                <div class="rev">
+                    
+                    <img src="images/prof.png" class="custi">
+                     
+                    <div class="revd">
+                        <h3>Prof VK Tiwari</h5>
+                        <p>They offered food coupons of KTJ stalls, but the stalls were not there. KTJ was held Online.</p>
+
+                    </div>
+                </div>
+                </div>
+
+
+                <div class="section ">
+                    <h2>Feedback</h2>
+                </div>
+                <div class= "form">
+                    <p>Name</p>
+                    <input type="text">
+                    <br>
+                    <p>Email</p>
+                    <input type="text">
+                    <br>
+                    <p>Comments</p>
+                    <textarea name="" id="" cols="30" style="width: 97%;
+                    padding: 12px 20px;
+                    margin: 8px 0;
+                    display: inline-block;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;"></textarea>
+                    <p></p>
+                    <input type="submit" value="Submit">
+                    <br>
+
+                </div>
+
+            </div>
+
+            <div class="about">
+                <div class="section frame" >
+
+                    <a name="us"></a>
+                    <h1 style="color: bisque;">About Us</h1>
+                </div >
+                <div class="frame abouts">
+                    <div class="info" >
+                        <p margin="0">Delivey Partners</p>
+                        <ul style="list-style-type:none;">
+                            <li><a href="" target="_blank" class="dlogs"><img src="images/swiggy.png" class="dlogs"></a></li>
+                            <li><a href="" target="_blank" class="dlogs"><img src="images/zomato.png" class="dlogs"></a></li>
+                            <li><a href="" target="_blank" class="dlogs"><img src="images/Uber.png" class="dlogs"></a></li>
+                        </ul>
+                    </div>
+                    <div class="info" >
+                        <p >Connect with us on</p>
+                        <ul style="list-style-type:none;">
+                            <li><a href="https://www.facebook.com/ktj.iitkgp/" target="_blank" class="dlogs" ><img src="images/apps (5).png" class="dlogs"></a></li>
+                            <li><a href="https://www.instagram.com/ktj.iitkgp/?hl=en" target="_blank" class="dlogs"><img src="images/apps (6).png" class="dlogs"></a></li>
+                            <li><a href="https://in.linkedin.com/company/kshitij-iit-kharagpur" target="_blank" class="dlogs"><img src="images/apps (1).png" class="dlogs"></a></li>
+                            <li><a href="https://www.youtube.com/user/ktjiitkgp/playlists" target="_blank" class="dlogs"><img src="images/apps (4).png" class="dlogs"></a></li>
+                        </ul>
+                    </div>
+                    <div class="info">
+                        <p>Contact US</p>
+                        <h3 >The Chakki Dining</h3>
+                        <h4 > A-21, Mall of Punjab, Kshitij Road, Amritsar- Punjab. 327690<br>93XX998324<br>ktjstalls@online.kgp</h4>
+                    </div>
+
+
+                </div><a href="#intro">
+                <p style="color: lawngreen; font-weight: lighter; font-size: smaller;" class="frame">Back to Top</p></a>
+
+            </div>
+        </div>
+    </body>
+</html>
